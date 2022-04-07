@@ -1,8 +1,10 @@
 let  printDate=function(){
-    console.log("07-04-2022 ")
+    let a = new Date();
+    console.log(a)
 }
 let printMonth=function(){
-    console.log(" april");
+    let a = new Date();
+    console.log(a.getMonth());
 }
 let getBatchInfo = function(){
     console.log("  ‘Thorium, W3D1, the topic for today is Nodejs module system’")  

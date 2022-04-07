@@ -8,8 +8,8 @@ const lodash = require('lodash');
 router.get('/hello', function (req, res) {
 // logger.welcome();
 //     util.getBatchInfo()
-//     util.printDate()
-//     util.printMonth()
+    util.printDate();
+    util.printMonth()
 // validator.trim()
 // validator.changetoLowerCase();
 // validator.changetoupperCase();

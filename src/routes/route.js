@@ -1,23 +1,70 @@
-const express = require('express');
-const logger = require('./logger')
-
+const express = require('express');  
+// const logger = require('../logger/logger.js');
+// const util = require('../util/helper.js')
+// const validator = require('../validator/formatter.js')
 const router = express.Router();
+// const lodash = require('lodash');
 
-router.get('/user-profile/:abcd', function(req, res) {
-    console.log(req)
-    console.log(req.params.abcd)
-    res.send('dummy response')
-})
+// const a = ["kgf","rrr",'bahubali','pushpa','radhe shyam']
 
-router.get('/test-me', function (req, res) {
-    console.log('------------------')
-    console.log(req)
-    console.log('------------------')
-    console.log('These are the request query parameters: ', req.query)
-    res.send('My first ever api!')
+router.get('/movies', function (req, res) {
+    const a = ["kgf","rrr",'bahubali','pushpa','radhe shyam']
+
+    res.send(a);
 });
+router.get('/movies/:b', function (req, res) {
+    const a = ["kgf","rrr",'bahubali','pushpa','radhe shyam']
+// console.log(req.params.b)
+if(req.params.b<a.length){
+    res.send(a[req.params.b]);
+}else{
+    res.send(' pls enter valid syntax ');
+}
+});
+router.get('/films', function (req, res) {
+    const  d =[ {
+        "id": 1,
+        "name": "The Shining"
+       }, {
+        "id": 2,
+        "name": "Incendies"
+       }, {
+        "id": 3,
+        "name": "Rang de Basanti"
+       }, {
+        "id": 4,
+        "name": "Finding Nemo"
+       }]
+       res.send(d);
+       
+});
+router.get('/films/:p', function (req, res) {
+    const  d =[ {
+        "id": 25,
+        "name": "The Shining"
+       }, {
+        "id": 2,
+        "name": "Incendies"
+       }, {
+        "id": 32,
+        "name": "Rang de Basanti"
+       }, {
+        "id": 4,
+        "name": "Finding Nemo"
+       }]
+       for (let i = 0; i < d.length; i++) {
+           if(d[i].id==req.params.p){
+               res.send(d[i]);
+           }  
+       }
+       for (let i = 0; i < d.length; i++) {
+           if(d[i].id!==req.params.p){
+               res.send(" pls enter valid id");
+           }  
+       }
 
-
+       
+});
 
 
 module.exports = router;

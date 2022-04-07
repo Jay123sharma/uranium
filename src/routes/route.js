@@ -1,9 +1,11 @@
 const express = require('express');
+// const router =router.express() ;ls
 
-const router = express.Router();
+const logger = require('../logger')
 
 router.get('/test-me', function (req, res) {
-    res.send('My first ever api!')
+    logger.welcome()
+    res.send('my first route')
 });
 
 module.exports = router;
